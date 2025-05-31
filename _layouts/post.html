@@ -1,8 +1,65 @@
 ---
 ---
 
-<article>
-  <h1>{{ page.title }}</h1>
-  <time datetime="{{ page.date }}">{{ page.date | date: "%B %d, %Y" }}</time>
-  <div>{{ content }}</div>
-</article>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ page.title }} - {{ site.title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="preload"
+      as="script"
+      href="https://jblitzar.github.io/global.js"
+    />
+    <script async src="https://jblitzar.github.io/global.js"></script>
+    <style>
+      h1 {
+        /*TODO: hack */
+        font-weight: 400;
+        font-size: 3.5rem;
+        font-family: "Helvetica", sans-serif;
+        letter-spacing: normal;
+      }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-153400SX3J"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-153400SX3J");
+    </script>
+
+    <link
+      rel="preload"
+      as="style"
+      href="https://jblitzar.github.io/global.css"
+    />
+    <link rel=icon href=https://jblitzar.github.io/favicon.png>
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    />
+  </head>
+  <body>
+    {% include header.html %}
+    <main>
+      <article>
+        <h1>{{ page.title }}</h1>
+        <time datetime="{{ page.date }}"
+          >{{ page.date | date: "%B %d, %Y" }}</time
+        >
+        <div>{{ content }}</div>
+      </article>
+    </main>
+    {% include footer.html %}
+  </body>
+</html>

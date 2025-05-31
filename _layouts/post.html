@@ -16,10 +16,10 @@
     <style>
       h1 {
         /*TODO: hack */
-        font-weight: 400;
-        font-size: 3.5rem;
+        font-weight: 400 !important;
+        font-size: 3.5rem !important;
         font-family: "Helvetica", sans-serif;
-        letter-spacing: normal;
+        letter-spacing: normal !important;
       }
     </style>
 
@@ -52,7 +52,7 @@
   <body>
     {% include header.html %}
     <main>
-      <article>
+      <article class="container">
         <h1>{{ page.title }}</h1>
         <time datetime="{{ page.date }}"
           >{{ page.date | date: "%B %d, %Y" }}</time
